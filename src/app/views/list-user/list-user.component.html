@@ -1,8 +1,15 @@
 <h1 style="text-align: center; margin-top: 3%;">Repositórios do Usuário: <span style="color:green; font-size: larger;">{{value}}</span></h1>
-<mat-list style="margin-left: 10%;margin-top: 3%;" role="list" *ngFor="let item of arrayDataUser">
-  <ul>
-    <li>{{item.name}}</li>
-  </ul>
+
+<div *ngIf="arrayDataUser.length > 0" >
+  <mat-list style="margin-left: 10%;margin-top: 3%;" role="list" *ngFor="let item of arrayDataUser">
+    <ul>
+      <li>{{item.name}}</li>
+    </ul>
+  </mat-list>
+</div>
+
+<mat-list *ngIf="arrayDataUser.length == 0" style="display: flex; align-content: center; justify-content: center;" role="list">
+  <h2>Nenhum repositório cadastrado ou Usuário não existente!</h2>
 </mat-list>
 
 <button style="margin-left: 50%;" class="buttonPosition" mat-button (click)="goToHome()" >Voltar</button>
